@@ -1,0 +1,110 @@
+#-------------------- TYPE --------------------
+
+# Export date: 09/09/2018 07:32:49
+
+
+# namespace StarWars version 1.0
+
+abstract Character{
+    name:String                         | nom du personnage
+    friends:[Character]                 | Liste de ses amis
+    appearsIn:[Episode]                 | Episodes dans lesquelles il apparait
+    measures:CharacterMeasure           | principales mesures du presonnage
+    
+}
+
+type CharacterMeasure{
+    weight:Decimal                      | poids
+    height:Decimal                      | taille
+}
+
+type Episode {
+    id:ID
+    name:String                         | nom de l'épisode
+    duration:Integer                    | durée en minutes
+
+    _name(example:"La Menace fantôme"|"L Attaque des clones"|"La Revanche des Sith")
+}
+
+type Human extends Character{
+    id:ID
+    starShips:[StarShip]                | Liste de vaisseaux pilotés par le personnage
+    totalCredit:Int                     | Crédit total
+    birthDate:Date                      | date de naissance
+
+    typeMarker(birthDate)
+    _name(example:"Luke Skywalker"|"Princesse Leia"|"Han Solo"|"Yoda"|"Dark Vador")
+}
+
+type Droid extends Character{
+    id:ID
+    primaryFunction:String              | Fonction principales
+
+    typeMarker(primaryFunction)
+    _name(example:"R2D2"|"3-CPO")
+    _primaryFunction(example:"protocol droid"|"astromech droid")
+}
+
+type StarShip{
+    id:ID
+    name:String                         | nom du vaisseau
+    characteristics:StarShipCharacteristics | prinicpales carastéristiques
+
+    _name(example:"ARC-170 starfighter"|"Faucon Millenium"|"Frégate Nebulon B"|"Croiseur Mon Calamari")
+}
+
+enum PropulsionType {Plasma,SolarWind,Nuclear,Antimatter}
+
+type StarShipCharacteristics{
+    id:ID
+    propulsion:PropulsionType           | Type de propulsion
+    speed:Decimal                       | Vitesse du vaisseau
+    length:Decimal                      | longueur du vaisseau
+    age:Integer                         | Age de l'appareil
+    lastRevision:Date                   | Date de la dernière révision
+
+    _age(min:18,max:90)
+    _length(min:1000,max:2000)
+    _speed(example:10000..50000)
+    _lastRevision(example:"2017-08-10".."2018-05-10", min:"2010-01-01",max:"2100-12-31")
+    _propulsion(example:"Plasma"|"Antimatter")
+}
+
+#-------------------- FACADE --------------------
+
+target web
+
+facade Human.web on Human{
+    name
+    friends
+    birthDate
+    starShips
+    measures
+}
+
+facade Droid.web on Droid{
+    name
+    friends
+    primaryFunction
+    measures
+    
+}
+
+facade azEFEZRGERZg on CharacterMeasure
+
+
+
+
+
+
+
+facade CharacterMeasure.web with CharacterMeasure
+
+
+
+
+facade StarShipCharacteristics.web with StarShipCharacteristics{
+    propulsion
+    speed
+}
+

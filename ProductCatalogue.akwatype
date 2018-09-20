@@ -1,0 +1,183 @@
+#-------------------- TYPE --------------------
+
+# Export date: 09/09/2018 07:40:32
+
+
+# namespace ProductCatalogue version 1.0
+
+type Catalogue{
+    id:ID
+    code:String
+    name:String
+    products:[Product]
+}
+
+type Product{
+    id:ID
+    code:String
+    description:String
+    category:ProductCategory
+    suppliers:[Supplier]
+    advices:[Advice]
+    salesPrice:Double
+    purchasePrice:Double
+}
+
+type ProductCategory{
+    id:ID
+    code:String
+    name:String
+}
+
+abstract ThirdParty{
+    code:String
+    name:String
+    address:Address
+    VATCode:String
+    contacts:[Contact]
+}
+
+type Supplier extends ThirdParty{
+    id:ID
+    discountRate:Double
+}
+
+type Customer extends ThirdParty{
+    id:ID
+    orders:Order
+}
+
+type Contact{
+    id:ID
+    name:String
+    title:String
+    phoneNumber:String
+    email:String
+
+}
+
+type Address{
+    id:ID
+    addressLine1:String
+    addressLine2:String
+    city:String
+    state:String
+    zipCode:String
+    country:Country
+}
+
+type Country{
+    codeISO:String
+    label:String
+}
+
+type Carrier extends ThirdParty{
+    fleetSize:Integer
+}
+
+type Order{
+    id:ID
+    num:String
+    description:String
+    customer:Customer
+    products:[Product]
+    invoice:Invoice
+    shippingAddress:Address
+}
+
+type Invoice{
+    num:String
+    order:Order
+    shippingDate:Date
+    duDate:Date
+    paymentDate:Date
+    meanOfPayment:MeanOfPayement
+    invoiceLines:InvoiceLine
+}
+
+abstract MeanOfPayement{
+    code:String
+    label:String
+    bank:Bank
+}
+
+type Bank{
+    id:ID
+    code:String
+    name:String
+    bankIdentificationNumber:String
+}
+
+
+type CreditCard extends MeanOfPayement{
+    id:ID
+    cardNumer:String
+    expirationDate:Date
+    scurityCode:String
+}
+
+type Cheque extends MeanOfPayement{
+    id:ID
+    chequeNumber:String
+}
+
+type InvoiceLine{
+    product:Product
+    quantity:Integer
+    price:Double
+}
+
+type Advice{
+    id:ID
+    who:Customer
+    product:Product
+    adviceScore:Int
+    comment:String
+
+    _adviceScore(min:0,max:5)
+}
+
+#-------------------- FACADE --------------------
+
+facade ProductF on Product {
+
+    advices {
+        
+        product {
+            
+            advices:advices::Advice
+            category {
+                code
+
+            }
+        }
+
+        who {
+
+            address {
+                country {
+                    codeISO {
+                        
+                    }
+
+                }
+            }
+
+        }
+        
+    }
+    
+    category {
+        
+    }
+    
+}
+
+
+facade Address on  Carrier {
+    address {
+        addressLine1:city
+        country::Contact
+    }
+}
+
