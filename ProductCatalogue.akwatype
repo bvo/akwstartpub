@@ -139,45 +139,107 @@ type Advice{
 
 #-------------------- FACADE --------------------
 
-facade ProductF on Product {
+#------------------------------------------ Customer Catalogue
 
-    advices {
-        
-        product {
-            
-            advices:advices::Advice
-            category {
-                code
-
-            }
+facade CustomerCatalogue on Catalogue{
+    name
+    products{
+        code
+        description
+        with(category){
+            codeCategorie:code
+            nomCategorie:name
         }
-
-        who {
-
-            address {
-                country {
-                    codeISO {
-                        
-                    }
-
-                }
-            }
-
-        }
-        
+        prixDeVente:salesPrice
+        avis:advices::AdviceShortInFrench
     }
-    
-    category {
-        
-    }
-    
 }
 
+facade AdviceShortInFrench on Advice{
+    note:adviceScore
+    commentaire:comment
+}
 
-facade Address on  Carrier {
-    address {
-        addressLine1:city
-        country::Contact
+#------------------------------------------ Parteners Catalogue
+
+facade PartnerCatalogue on Catalogue{
+    code
+    name
+    products{
+        code
+        description
+        with(category){
+            nomCategorie:name
+        }
+        suppliers{
+            name,
+            with(address){
+                city
+                with(country){
+                    country:label
+                }
+            }
+            contacts {
+                name
+                title
+                email
+            }
+        }
+        salesPrice
+        advices::AdviceCatalogue
+    }
+}
+
+facade AdviceCatalogue on Advice{
+    score:adviceScore
+    comment
+    with(who){
+        name,
+        with(address){
+            city
+            with(country){
+                country:label
+            }
+        }
+    }
+}
+
+facade AdviceCatalogueBrut on Advice{
+    score:adviceScore
+    comment
+    who{
+        name,
+        address{
+            city
+            country{
+                country:label
+            }
+        }
+    }
+}
+
+#========================================== Target facade definition
+
+target web
+
+
+target web
+
+facade AdviceCatalogue.web on Advice{
+    score:adviceScore
+    comment
+    who
+}
+
+facade Customer.web with Customer{
+    name
+    address
+}
+
+facade Address.web with Address{
+    city
+    with(country){
+        country:label
     }
 }
 
