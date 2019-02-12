@@ -60,7 +60,7 @@ type StarShipCharacteristics{
     speed:Decimal            
     length:Decimal           
     age:Integer {
-
+        
     }             
     lastRevision:Date        
 
