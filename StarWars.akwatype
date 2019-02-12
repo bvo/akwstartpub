@@ -47,7 +47,7 @@ type Droid extends Character{
 
 type StarShip{
     id:ID
-    name:String                         | nom du vaisseau
+    name:String
     characteristics:StarShipCharacteristics | prinicpales carastéristiques
 
     _name(example:"ARC-170 starfighter"|"Faucon Millenium"|"Frégate Nebulon B"|"Croiseur Mon Calamari")
