@@ -11,7 +11,7 @@ abstract Character{
     }
     friends:[Character]
     appearsIn:[Episode]
-    measures:CharacterMeasure           | principales mesures du presonnage
+    measures:CharacterMeasure
     
 }
 
