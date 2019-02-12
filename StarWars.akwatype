@@ -69,39 +69,5 @@ type StarShipCharacteristics{
 
 #-------------------- FACADE --------------------
 
-target web
 
-facade Human.web on Human{
-    name
-    friends
-    birthDate
-    starShips
-    measures
-}
-
-facade Droid.web on Droid{
-    name
-    friends
-    primaryFunction
-    measures
-    
-}
-
-facade azEFEZRGERZg on CharacterMeasure
-
-
-
-
-
-
-
-facade CharacterMeasure.web with CharacterMeasure
-
-
-
-
-facade StarShipCharacteristics.web with StarShipCharacteristics{
-    propulsion
-    speed
-}
 
