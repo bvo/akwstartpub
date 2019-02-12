@@ -35,6 +35,8 @@ type Human extends Character{
     totalCredit:Int
     birthDate:Date
 
+
+    typeMarker: birthDate
 }
 
 type Droid extends Character{
