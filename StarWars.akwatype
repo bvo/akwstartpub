@@ -42,9 +42,7 @@ type Droid extends Character{
     id:ID
     primaryFunction:String
 
-    typeMarker primaryFunction 
-    _name(example:"R2D2"|"3-CPO")
-    _primaryFunction(example:"protocol droid"|"astromech droid")
+    typeMarker primaryFunction
 }
 
 type StarShip{
