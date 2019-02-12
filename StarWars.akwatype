@@ -23,7 +23,7 @@ type CharacterMeasure{
 type Episode {
     id:ID
     name:String {
-        example: 
+        example: "La Menace fantôme"|"L Attaque des clones"|"La Revanche des Sith"
     }
     duration:Integer
 
