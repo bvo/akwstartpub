@@ -136,7 +136,3 @@ type Advice{
 
     _adviceScore(min:0,max:5)
 }
-
-#-------------------- FACADE --------------------
-
-#------------------------------------------ Customer Catalogue
