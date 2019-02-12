@@ -7,7 +7,7 @@
 
 abstract Character{
     name:String  {
-        
+        de
     }
     friends:[Character]                 | Liste de ses amis
     appearsIn:[Episode]                 | Episodes dans lesquelles il apparait
