@@ -43,7 +43,7 @@ type Droid extends Character{
     id:ID
     primaryFunction:String
 
-    typeMarker primaryFunction
+    # typeMarker primaryFunction
 }
 
 type StarShip{
