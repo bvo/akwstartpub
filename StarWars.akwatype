@@ -38,6 +38,7 @@ type Human extends Character{
 
    typeMarker {
        birthDate
+   }
 }
 
 type Droid extends Character{
