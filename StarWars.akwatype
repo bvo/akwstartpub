@@ -31,7 +31,7 @@ type Episode {
 
 type Human extends Character{
     id:ID
-    starShips:[StarShip]                | Liste de vaisseaux pilotés par le personnage
+    starShips:[StarShip]
     totalCredit:Int                     | Crédit total
     birthDate:Date                      | date de naissance
 
