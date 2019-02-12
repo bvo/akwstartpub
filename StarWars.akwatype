@@ -56,10 +56,10 @@ enum PropulsionType {Plasma,SolarWind,Nuclear,Antimatter}
 type StarShipCharacteristics{
     id:ID
     propulsion:PropulsionType
-    speed:Decimal                       | Vitesse du vaisseau
-    length:Decimal                      | longueur du vaisseau
-    age:Integer                         | Age de l'appareil
-    lastRevision:Date                   | Date de la dernière révision
+    speed:Decimal            
+    length:Decimal           
+    age:Integer              
+    lastRevision:Date        
 
     _age(min:18,max:90)
     _length(min:1000,max:2000)
