@@ -32,7 +32,7 @@ type Episode {
 type Human extends Character{
     id:ID
     starShips:[StarShip]
-    totalCredit:Int                     | Crédit total
+    totalCredit:Int
     birthDate:Date                      | date de naissance
 
     typeMarker(birthDate)
