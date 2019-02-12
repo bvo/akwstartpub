@@ -33,7 +33,7 @@ type Human extends Character{
     id:ID
     starShips:[StarShip]
     totalCredit:Int
-    birthDate:Date                      | date de naissance
+    birthDate:Date
 
     typeMarker(birthDate)
     _name(example:"Luke Skywalker"|"Princesse Leia"|"Han Solo"|"Yoda"|"Dark Vador")
