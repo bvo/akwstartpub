@@ -16,8 +16,8 @@ abstract Character{
 }
 
 type CharacterMeasure{
-    weight:Decimal                      | poids
-    height:Decimal                      | taille
+    weight:Decimal
+    height:Decimal
 }
 
 type Episode {
