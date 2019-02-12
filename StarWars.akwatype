@@ -36,7 +36,6 @@ type Human extends Character{
     birthDate:Date
 
     typeMarker birthDate
-    typeMarker(birthDate)
 }
 
 type Droid extends Character{
