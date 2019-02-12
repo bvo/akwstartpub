@@ -6,7 +6,7 @@
 # namespace StarWars version 1.0
 
 abstract Character{
-    name:String                         | nom du personnage
+    name:String                         
     friends:[Character]                 | Liste de ses amis
     appearsIn:[Episode]                 | Episodes dans lesquelles il apparait
     measures:CharacterMeasure           | principales mesures du presonnage
