@@ -58,7 +58,9 @@ type StarShipCharacteristics{
     propulsion:PropulsionType
     speed:Decimal            
     length:Decimal           
-    age:Integer              
+    age:Integer {
+        
+    }             
     lastRevision:Date        
 
     _age(min:18,max:90)
