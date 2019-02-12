@@ -9,8 +9,8 @@ abstract Character{
     name:String  {
         description: "nom du personnage"
     }
-    friends:[Character]                 | Liste de ses amis
-    appearsIn:[Episode]                 | Episodes dans lesquelles il apparait
+    friends:[Character]
+    appearsIn:[Episode]
     measures:CharacterMeasure           | principales mesures du presonnage
     
 }
