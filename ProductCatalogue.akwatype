@@ -134,5 +134,4 @@ type Advice{
     adviceScore:Int
     comment:String
 
-    _adviceScore(min:0,max:5)
 }
