@@ -23,9 +23,6 @@ facade azEFEZRGERZg on CharacterMeasure
 
 facade CharacterMeasure.web with CharacterMeasure
 
-
-
-
 facade StarShipCharacteristics.web with StarShipCharacteristics{
     propulsion
     speed
