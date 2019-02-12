@@ -65,11 +65,6 @@ type StarShipCharacteristics{
     }             
     lastRevision:Date        
 
-    _age(min:18,max:90)
-    _length(min:1000,max:2000)
-    _speed(example:10000..50000)
-    _lastRevision(example:"2017-08-10".."2018-05-10", min:"2010-01-01",max:"2100-12-31")
-    _propulsion(example:"Plasma"|"Antimatter")
 }
 
 #-------------------- FACADE --------------------
