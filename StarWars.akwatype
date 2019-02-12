@@ -36,7 +36,6 @@ type Human extends Character{
     birthDate:Date
 
     typeMarker(birthDate)
-    _name(example:"Luke Skywalker"|"Princesse Leia"|"Han Solo"|"Yoda"|"Dark Vador")
 }
 
 type Droid extends Character{
