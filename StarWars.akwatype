@@ -27,7 +27,6 @@ type Episode {
     }
     duration:Integer
 
-    _name(example:"La Menace fantôme"|"L Attaque des clones"|"La Revanche des Sith")
 }
 
 type Human extends Character{
