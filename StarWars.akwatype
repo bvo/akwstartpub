@@ -40,7 +40,7 @@ type Human extends Character{
 
 type Droid extends Character{
     id:ID
-    primaryFunction:String              | Fonction principales
+    primaryFunction:String
 
     typeMarker(primaryFunction)
     _name(example:"R2D2"|"3-CPO")
