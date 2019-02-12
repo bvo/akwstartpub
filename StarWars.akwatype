@@ -35,6 +35,7 @@ type Human extends Character{
     totalCredit:Int
     birthDate:Date
 
+
     typeMarker: birthDate
 }
 
