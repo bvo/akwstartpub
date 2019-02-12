@@ -34,7 +34,7 @@ type Human extends Character{
     starShips:[StarShip]
     totalCredit:Int
     birthDate:Date {
-        ty
+        
     }
 
     typeMarker(birthDate)
